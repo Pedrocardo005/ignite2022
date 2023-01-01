@@ -1,4 +1,4 @@
-import { Replace } from "src/helpers/Replace";
+import { Replace } from "@helpers/Replace";
 import { Content } from "./content";
 import { randomUUID } from "node:crypto";
 
@@ -13,6 +13,7 @@ export interface NotificationProps {
     // null parece um branco
     // Nessa variável, pode ser null, undefined e Date
     readAt?: Date | null;
+    canceledAt?: Date | null;
     createdAt: Date;
 }
 
@@ -67,6 +68,14 @@ export class Notification {
 
     public get readAt(): Date | null | undefined {
         return this.props.readAt;
+    }
+
+    public cancel() {
+        this.props.canceledAt = new Date();
+    }
+
+    public get canceledAt(): Date | null | undefined {
+        return this.props.canceledAt;
     }
 
     /* Não faz sentido alterar a data de criação
