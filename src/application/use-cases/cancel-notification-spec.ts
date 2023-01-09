@@ -27,7 +27,7 @@ describe('Cancel notification', () => {
             expect.any(Date),
         );
     });
-
+    // Async é uma promisse
     it('should not be able to cancel a non existing notification', async () => {
         const notificationsRepository = new InMemoryNotificationsRepository();
         const cancelNotification = new CancelNotification(notificationsRepository);

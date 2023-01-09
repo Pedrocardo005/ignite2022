@@ -18,7 +18,9 @@ const config: Config = {
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node",
+    // converte os formatos de caminho para entendível do jest.
     moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
+      // retorna o diretório que está o jest
       prefix: '<rootDir>/',
     }),
 };
