@@ -3,12 +3,13 @@ import { Notification } from "@application/entities/notification";
 import { Content } from "@application/entities/content";
 import { CountRecipientNotifications } from "./count-recipient-notifications";
 import { makeNotification } from "test/factories/notification-factory";
+import { GetRecipientNotifications } from "./get-recipient-notifications";
 
 
-describe('Count recipients notifications', () => {
-    it('should be able to count recipient notifications', async () => {
+describe('Get recipients notifications', () => {
+    it('should be able to get recipient notifications', async () => {
         const notificationsRepository = new InMemoryNotificationsRepository();
-        const countRecipientNotifications = new CountRecipientNotifications(notificationsRepository,);
+        const getRecipientNotifications = new GetRecipientNotifications(notificationsRepository,);
 
         const notification = new Notification({
             category: 'social',
@@ -31,10 +32,14 @@ describe('Count recipients notifications', () => {
 
         // Factory é uma função que retorna um objeto.
 
-        const { count } = await countRecipientNotifications.execute({
+        const { notifications } = await getRecipientNotifications.execute({
             recipientId: 'recipient-1',
         });
 
-        expect(count).toEqual(2);
+        expect(notifications).toHaveLength(2);
+        expect(notifications).toEqual(expect.arrayContaining([
+            expect.objectContaining({ recipientId: 'recipient-1' }),
+            expect.objectContaining({ recipientId: 'recipient-1' }),
+        ]));
     });
 });
