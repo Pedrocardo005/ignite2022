@@ -23,8 +23,8 @@ export class Notification {
 
     // Fazendo assim, indica que todos os atributos devem ser passados
     //no construtor, sem precisar escrever aquilo tudo.
-    constructor(props: Replace<NotificationProps, {createdAt?: Date }>) {
-        this._id = randomUUID();
+    constructor(props: Replace<NotificationProps, {createdAt?: Date }>, id?: string,) {
+        this._id = id ?? randomUUID();
         // Coloca os itens normalmente mas o createdAt é opicional
         this.props = {
             ...props,

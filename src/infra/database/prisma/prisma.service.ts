@@ -5,6 +5,12 @@ import { PrismaClient } from '@prisma/client';
 // OnModuleInit permite executar uma coisa assim que aplicação for ao ar
 @Injectable()
 export class PrismaService extends PrismaClient implements OnModuleInit {
+  constructor() {
+    super({
+      log: ['query'],
+    });
+  }
+
   async onModuleInit() {
     await this.$connect();
   }
