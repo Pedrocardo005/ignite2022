@@ -1,0 +1,11 @@
+ Diêgo recomendou desconectar a aplicação em tudo. Até do banco de dados. Ele é apenas uma ferramenta. A aplicação deve ter um jeito de ser testada sem banco de dados.
+ Primeiro pense na entidade, crie uma classe do que você precisa, depois vá pro banco.
+ Tudo que é externo, joga no infra. Rotas, banco de dados, comunicação.
+ 
+ Uma entidade talvez não precise ser criada no banco de dados como uma tabela.
+ 
+ npm run test - Roda os testes
+
+ Criar banco na memória ajuda a desacoplar a aplicação.
+ 
+ Pesquise por Martin fowler. Ele tem conteúdos bons, Diêgo citou o de banco de dados em memória.

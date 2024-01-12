@@ -1,0 +1,31 @@
+ A arquitetura é como iremos hospedar a nossa aplicação.
+
+ Pros serviços do microsserviço, eles geralmente guardam informações iguais em banco de dados.
+ Pode conter duas tabelas iguais em dois banco de dados. Duplicidade de dados.
+ 
+ npm run start:dev - inicia o projeto. Mas tem uma lista de comandos parecidos no package.json.
+ 
+ Pasta dist é o projeto meio que transpilado para javascript.
+ 
+ Decorators são incrementações a métodos, classes, variáveis, etc... Começam com @
+ Acoplam funcionalidades de forma mágica.
+ 
+ modle, service e controller. Service faz a comunicação com o banco de dados. Podem ser repositórios. São genéricos.
+ 
+ COnceito de inversão de dependência. Uma classe que recebe suas dependências pelo construtor.
+ Injeção de dependência é automatizar, passa uma instância como parâmetro desse controller.
+ 
+ app.module que define... esqueci de anotar
+ 
+ npm i prisma -D - comando para instalar a cli do prisma.
+ npm i @prisma/client - ferramenta de desenvolvimento.
+ npx prisma init --datasource-provider SQLite - comando para usar o sqlite.
+ 
+ No arquivo schema.prisma, criamos a classe model Notification.
+ 
+ npx prisma migrate dev - cria migrações do prisma.
+ npx prisma studio - abre um prisma studio, ele serve pra mostrar o banco de dados.
+ 
+ Tem de copiar um arquivo lá.
+ 
+ A chave é #BACK-END
